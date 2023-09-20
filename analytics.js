@@ -1,3 +1,5 @@
+console.log("JavaScript file connected!");
+
 // Check if a unique visitor cookie exists
 if (!document.cookie.includes("uniqueVisitor=true")) {
     // If not, set a cookie to track the unique visitor
