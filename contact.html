@@ -233,5 +233,31 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/custom.js"></script>
+
+               <script>
+           // Function to track a visit
+           function trackVisit() {
+             // Make a GET request to your Cloudflare Worker for tracking
+             fetch('https://fetchdata.petrocksitters.workers.dev/', {
+               method: 'GET',
+               mode: 'cors', // Enable CORS for cross-origin requests
+             })
+               .then((response) => {
+                 if (response.status === 200) {
+                   console.log('Visit tracked successfully.');
+                 } else {
+                   console.error('Failed to track visit:', response.status);
+                 }
+               })
+               .catch((error) => {
+                 console.error('Error tracking visit:', error);
+               });
+           }
+         
+           // Call the trackVisit function when the page loads
+           window.addEventListener('load', trackVisit);
+         </script>
+
+      
    </body>
 </html>
